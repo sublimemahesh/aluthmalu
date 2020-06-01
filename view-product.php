@@ -3,9 +3,8 @@ include './class/include.php';
 $id = $_GET['id'];
 $PRODUCT = new Product($id);
 
-$TYPE= $PRODUCT->product_type;
-$PRODUCT_TYPE=new ProductType($PRODUCT->product_type);
-
+$TYPE = $PRODUCT->product_type;
+$PRODUCT_TYPE = new ProductType($PRODUCT->product_type);
 ?>
 
 
@@ -92,7 +91,7 @@ $PRODUCT_TYPE=new ProductType($PRODUCT->product_type);
                                                         <a data-fancybox="tm-prodetails-imagegallery"
                                                            href="upload/product-type/product/<?php echo $PRODUCT->image_name ?>"
                                                            data-caption="Product Zoom Image 1">
-                                                            <img src="upload/product-type/product/<?php echo $PRODUCT->image_name  ?>"
+                                                            <img src="upload/product-type/product/<?php echo $PRODUCT->image_name ?>"
                                                                  alt="product image">
                                                         </a>
                                                     </div>
@@ -111,7 +110,17 @@ $PRODUCT_TYPE=new ProductType($PRODUCT->product_type);
                                                 <ul class="tm-prodetails-infos">
                                                     <li><b><h6 style="color: grey">Product Type:</b><span> <?php echo $PRODUCT_TYPE->name ?></h6></span></li>
                                                     <li><b><h6 style="color: grey">Unit:</b><span> <?php echo $PRODUCT->unit ?></h6></span></li>
-                                                    <li><b><h6 style="color: grey">Available:</b> <span class="color-theme"> In stock</h6></span></li>
+                                                    <?php
+                                                    if ($PRODUCT->in_stock == 0) {
+                                                        ?>
+                                                        <li><b><h6 style="color: grey">Available:</b> <span class="color-theme"> Not In stock</h6></span></li>
+                                                        <?php
+                                                    } else {
+                                                        ?>
+                                                        <li><b><h6 style="color: grey">Available:</b> <span class="color-theme"> In stock</h6></span></li>
+                                                    <?php }
+                                                    ?>
+
                                                 </ul>
                                                 <div class="tm-prodetails-paras">
                                                     <div class="tm-prodetails-quantitycart">
@@ -146,7 +155,7 @@ $PRODUCT_TYPE=new ProductType($PRODUCT->product_type);
                                             <div class="tm-prodetails-description">
 
                                                 <p><?php echo $PRODUCT->description ?></p>
-                                                
+
                                             </div>
                                         </div>
 
