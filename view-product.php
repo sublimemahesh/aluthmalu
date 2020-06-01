@@ -1,5 +1,11 @@
 <?php
 include './class/include.php';
+$id = $_GET['id'];
+$PRODUCT = new Product($id);
+
+$TYPE= $PRODUCT->product_type;
+$PRODUCT_TYPE=new ProductType($PRODUCT->product_type);
+
 ?>
 
 
@@ -56,11 +62,11 @@ include './class/include.php';
                  data-white-overlay="2">
                 <div class="container">
                     <div class="tm-breadcrumb">
-                        <h2 class="white">Product Details</h2>
+                        <h2 class="white"><?php echo $PRODUCT->name ?></h2>
                         <ul>
                             <li><a href="./">Home</a></li>
                             <li>Products</li>
-                            <li>Product Details</li>
+                            <li><?php echo $PRODUCT->name ?></li>
                         </ul>
                     </div>
                 </div>
@@ -84,49 +90,9 @@ include './class/include.php';
                                                 <div class="tm-prodetails-largeimages">
                                                     <div class="tm-prodetails-largeimage">
                                                         <a data-fancybox="tm-prodetails-imagegallery"
-                                                           href="assets/images/products/product-image-1.jpg"
+                                                           href="upload/product-type/product/<?php echo $PRODUCT->image_name ?>"
                                                            data-caption="Product Zoom Image 1">
-                                                            <img src="assets/images/products/product-image-1.jpg"
-                                                                 alt="product image">
-                                                        </a>
-                                                    </div>
-                                                    <div class="tm-prodetails-largeimage">
-                                                        <a data-fancybox="tm-prodetails-imagegallery"
-                                                           href="assets/images/products/product-image-2.jpg"
-                                                           data-caption="Product Zoom Image 2">
-                                                            <img src="assets/images/products/product-image-2.jpg"
-                                                                 alt="product image">
-                                                        </a>
-                                                    </div>
-                                                    <div class="tm-prodetails-largeimage">
-                                                        <a data-fancybox="tm-prodetails-imagegallery"
-                                                           href="assets/images/products/product-image-3.jpg"
-                                                           data-caption="Product Zoom Image 3">
-                                                            <img src="assets/images/products/product-image-3.jpg"
-                                                                 alt="product image">
-                                                        </a>
-                                                    </div>
-                                                    <div class="tm-prodetails-largeimage">
-                                                        <a data-fancybox="tm-prodetails-imagegallery"
-                                                           href="assets/images/products/product-image-1.jpg"
-                                                           data-caption="Product Zoom Image 4">
-                                                            <img src="assets/images/products/product-image-1.jpg"
-                                                                 alt="product image">
-                                                        </a>
-                                                    </div>
-                                                    <div class="tm-prodetails-largeimage">
-                                                        <a data-fancybox="tm-prodetails-imagegallery"
-                                                           href="assets/images/products/product-image-2.jpg"
-                                                           data-caption="Product Zoom Image 5">
-                                                            <img src="assets/images/products/product-image-2.jpg"
-                                                                 alt="product image">
-                                                        </a>
-                                                    </div>
-                                                    <div class="tm-prodetails-largeimage">
-                                                        <a data-fancybox="tm-prodetails-imagegallery"
-                                                           href="assets/images/products/product-image-3.jpg"
-                                                           data-caption="Product Zoom Image 6">
-                                                            <img src="assets/images/products/product-image-3.jpg"
+                                                            <img src="upload/product-type/product/<?php echo $PRODUCT->image_name  ?>"
                                                                  alt="product image">
                                                         </a>
                                                     </div>
@@ -137,25 +103,25 @@ include './class/include.php';
 
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div class="tm-prodetails-content">
-                                                <h4 class="tm-prodetails-title">Fishing Reel</h4>
+                                                <h4 class="tm-prodetails-title"><?php echo $PRODUCT->name ?></h4>
 
                                                 <div class="tm-prodetails-price">
-                                                    <span>$59.99</span>
+                                                    <span style="color: red">Rs. <?php echo $PRODUCT->price ?></span>
                                                 </div>
                                                 <ul class="tm-prodetails-infos">
-                                                    <li><b>Product Type:</b><span> Lorem</span></li>
-                                                    <li><b>Unit:</b><span> Lorem</span></li>
-                                                    <li><b>Available:</b> <span class="color-theme"> In stock</span></li>
+                                                    <li><b><h6 style="color: grey">Product Type:</b><span> <?php echo $PRODUCT_TYPE->name ?></h6></span></li>
+                                                    <li><b><h6 style="color: grey">Unit:</b><span> <?php echo $PRODUCT->unit ?></h6></span></li>
+                                                    <li><b><h6 style="color: grey">Available:</b> <span class="color-theme"> In stock</h6></span></li>
                                                 </ul>
                                                 <div class="tm-prodetails-paras">
-                                                 <div class="tm-prodetails-quantitycart">
-                                                    <div class="tm-quantitybox">
-                                                        <input type="text" value="1">
-                                                    </div>
-                                                    <a href="order-form.php" class="tm-button tm-button-dark">Add To Cart</a>
-                                                </div>  
+                                                    <div class="tm-prodetails-quantitycart">
+                                                        <div class="tm-quantitybox">
+                                                            <input type="text" value="1">
+                                                        </div>
+                                                        <a href="order-form.php" class="tm-button tm-button-dark">Add To Cart</a>
+                                                    </div>  
                                                 </div>
-                                                
+
 
 
                                             </div>
@@ -179,20 +145,8 @@ include './class/include.php';
                                              aria-labelledby="prodetails-area1-tab">
                                             <div class="tm-prodetails-description">
 
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                                    velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                                    officia deserunt mollit anim id est laborum consectetur
-                                                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                                                </p>
+                                                <p><?php echo $PRODUCT->description ?></p>
+                                                
                                             </div>
                                         </div>
 
@@ -256,9 +210,9 @@ include './class/include.php';
                                                 <span class="tm-rangeslider-rightgrip nst-animating" tabindex="0"></span>
                                             </div>
                                             <div class="widget-pricefilter-actions">
-                                                <p class="widget-pricefilter-price">Price: $<span
-                                                        class="tm-rangeslider-leftlabel">308</span>
-                                                    - $<span class="tm-rangeslider-rightlabel">798</span></p>
+                                                <p class="widget-pricefilter-price">Price: Rs. <span
+                                                        class="tm-rangeslider-leftlabel"> 308</span>
+                                                    - Rs. <span class="tm-rangeslider-rightlabel"> 798</span></p>
                                                 <button class="widget-pricefilter-button">Filter</button>
                                             </div>
                                         </div>
