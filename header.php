@@ -38,6 +38,7 @@
                             </ul>
                         </li>
                         <li><a href="contact.php">Contact Us</a></li>
+                        <li><a href="order-form.php"><i class="ion-android-cart"></i></a></li>
                     </ul>
                 </nav> 
                 <div class="tm-mobilenav"></div>

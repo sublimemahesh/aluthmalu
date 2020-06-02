@@ -1,4 +1,6 @@
 <?php
+include './class/include.php';
+
 $ABOUT_PAGE = new Page(1);
 ?>
 
