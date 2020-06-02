@@ -105,7 +105,7 @@ $PRODUCTS = $PRODUCT_TYPE->allProductsByType(5);
                             foreach ($PRODUCTS as $products) {
                                 ?>
                                 <!-- Single Product -->
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-12 pb-30">
                                     <div class="tm-pricebox text-center">
                                         <div class="tm-product text-center tm-scrollanim">
                                             <div class="tm-product-topside">
@@ -114,9 +114,9 @@ $PRODUCTS = $PRODUCT_TYPE->allProductsByType(5);
                                                     <li><a href="view-product.php?id=<?php echo $products['id']; ?>" class="tm-readmore">View More</a></li>
                                                 </ul>
                                             </div>
-                                            <div class="tm-product-bottomside" style="background-color: #98d4ec">
+                                            <div class="tm-product-bottomside" id="product">
                                                 <h6 class="tm-product-title"><a href="view-product.php?id=<?php echo $products['id']; ?>"><?php echo $products['name']; ?></a></h6>
-                                                <span class="tm-product-price" style="color: red">Rs. <?php echo $products['price']; ?></span>
+                                                <span class="tm-product-price" id="white"><b>Rs. <?php echo $products['price']; ?></b></span>
                                             </div>
                                         </div>
                                     </div>
