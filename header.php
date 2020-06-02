@@ -38,8 +38,6 @@
                             </ul>
                         </li>
                         <li><a href="contact.php">Contact Us</a></li>
-                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
-                        <li><i class="fa fa-cart-plus"></i><a href="" class="tm-button">Oder Now</a></li>
                     </ul>
                 </nav> 
                 <div class="tm-mobilenav"></div>

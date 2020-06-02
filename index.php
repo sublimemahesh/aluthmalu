@@ -87,13 +87,9 @@ $ABOUT_PAGE = new Page(1);
                                     <p><?php echo $ABOUT_PAGE->description ?>
                                     </p> 
                                     <ul class="stylish-list-color">
-                                        <li><i class="ion-android-checkmark-circle"></i> One of the reasons why people use
-                                            Lorem Ipsum is because it adjusts very well in
-                                            <i class="ion-android-checkmark-circle"></i> every ocasion.</li>
-                                        <li><i class="ion-android-checkmark-circle"></i> Quisque eleifend lorem ipsum, et
-                                            tempus nulla convallis nec.</li>
-                                        <li><i class="ion-android-checkmark-circle"></i> Suspendisse tempus consequat odio,
-                                            quis tempus augue vulputate at.</li>
+                                        <li><i class="ion-android-checkmark-circle"></i> Scale, flexibility and a wide range of fish products experience.</li>
+                                        <li><i class="ion-android-checkmark-circle"></i> Obtaining quality products from major production areas.</li>
+                                        <li><i class="ion-android-checkmark-circle"></i> Customers and suppliers to their requirement efficiently and cost effectively.</li>
                                     </ul>
                                     <a href="about.php" class="tm-button">Read more</a>
                                 </div>
