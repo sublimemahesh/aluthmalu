@@ -1,3 +1,7 @@
+<?php
+$ABOUT_PAGE = new Page(1);
+?>
+
 <div class="tm-footer">
     <div class="tm-footer-toparea tm-padding-section" data-bgimage="assets/images/footer-area-bg.jpg" data-black-overlay="9">
         <div class="container">
@@ -8,9 +12,7 @@
                     <div class="single-widget widget-info">
                         <a class="widget-info-logo" href="./">
                             <img src="assets/images/aluthmalu-logo-footer.png" alt="white logo" style="width: 200px;"></a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis orci ac
-                            odio dictum tincidunt. Donec ut metus leo auctor id faucibus.
+                        <p><?php echo substr($ABOUT_PAGE->description ,0,250) ?>
                         </p>
                         <ul>
                             <li><a href="#"><i class="ion-social-facebook"></i></a></li>
