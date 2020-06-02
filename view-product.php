@@ -105,28 +105,32 @@ $PRODUCT_TYPE = new ProductType($PRODUCT->product_type);
                                                 <h4 class="tm-prodetails-title"><?php echo $PRODUCT->name ?></h4>
 
                                                 <div class="tm-prodetails-price">
-                                                    <span style="color: red">Rs. <?php echo $PRODUCT->price ?></span>
+                                                    <span>Rs. <?php echo $PRODUCT->price ?></span>
                                                 </div>
+
+
                                                 <ul class="tm-prodetails-infos">
-                                                    <li><b><h6 style="color: grey">Product Type:</b><span> <?php echo $PRODUCT_TYPE->name ?></h6></span></li>
-                                                    <li><b><h6 style="color: grey">Unit:</b><span> <?php echo $PRODUCT->unit ?></h6></span></li>
-                                                    <?php
-                                                    if ($PRODUCT->in_stock == 0) {
-                                                        ?>
-                                                        <li><b><h6 style="color: grey">Available:</b> <span class="color-theme"> Not In stock</h6></span></li>
+                                                    
+                                                    <li><b>Product Type</b> &nbsp;: &nbsp;<?php echo $PRODUCT_TYPE->name ?></li>
+                                                    <li><b>Unit</b> &nbsp;: &nbsp;<?php echo $PRODUCT->unit ?></li>
+
                                                         <?php
-                                                    } else {
+                                                        if ($PRODUCT->in_stock == 0) {
+                                                            ?>
+                                                    <li><b>Available</b> &nbsp;: &nbsp;<span class="color-theme"> Not In stock</h6></span></li>
+                                                            <?php
+                                                        } else {
+                                                            ?>
+                                                    <li><b>Available</b> &nbsp;: &nbsp; <span class="color-theme"> In stock</h6></span></li>
+                                                        <?php }
                                                         ?>
-                                                        <li><b><h6 style="color: grey">Available:</b> <span class="color-theme"> In stock</h6></span></li>
-                                                    <?php }
-                                                    ?>
 
                                                 </ul>
+
+
                                                 <div class="tm-prodetails-paras">
                                                     <div class="tm-prodetails-quantitycart">
-                                                        <div class="tm-quantitybox">
-                                                            <input type="text" value="1">
-                                                        </div>
+                                                        
                                                         <a href="order-form.php" class="tm-button tm-button-dark">Add To Cart</a>
                                                     </div>  
                                                 </div>
@@ -204,27 +208,6 @@ $PRODUCT_TYPE = new ProductType($PRODUCT->product_type);
                                                 </div>
                                             </li>
                                         </ul>
-                                    </div>
-                                    <!--// Single Widget -->
-
-
-                                    <!-- Single Widget -->
-                                    <div class="single-widget widget-pricefilter">
-                                        <h6 class="widget-title">Filter by Price</h6>
-                                        <div class="widget-pricefilter-inner">
-                                            <div class="tm-rangeslider" data-range_min="0" data-range_max="800"
-                                                 data-cur_min="200" data-cur_max="550">
-                                                <div class="tm-rangeslider-bar nst-animating"></div>
-                                                <span class="tm-rangeslider-leftgrip nst-animating" tabindex="0"></span>
-                                                <span class="tm-rangeslider-rightgrip nst-animating" tabindex="0"></span>
-                                            </div>
-                                            <div class="widget-pricefilter-actions">
-                                                <p class="widget-pricefilter-price">Price: Rs. <span
-                                                        class="tm-rangeslider-leftlabel"> 308</span>
-                                                    - Rs. <span class="tm-rangeslider-rightlabel"> 798</span></p>
-                                                <button class="widget-pricefilter-button">Filter</button>
-                                            </div>
-                                        </div>
                                     </div>
                                     <!--// Single Widget -->
 

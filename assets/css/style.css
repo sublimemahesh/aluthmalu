@@ -5888,6 +5888,26 @@ button.tm-videobutton img {
     }
 }
 
+
+/*---------------My style---------------------*/
+
 .white{
     color: white;
 }
+
+#product{
+    background-color: #00acee;   
+}
+
+#white{
+   color: white; 
+   padding-bottom: 15px;
+}
+
+#color{
+  color: #64ffda;  
+}
+
+
+
+

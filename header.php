@@ -21,7 +21,7 @@
     <div class="tm-header-bottomarea">
         <div class="container">
             <div class="tm-header-inner">
-                <a href="#" class="tm-header-logo">
+                <a href="./" class="tm-header-logo">
                     <img src="assets/images/aluthmalu-logo.png" alt="malic" style="width: 150px;">
                 </a>
                 <nav class="tm-header-nav">

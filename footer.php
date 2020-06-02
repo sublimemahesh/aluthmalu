@@ -6,7 +6,7 @@
                 <!-- Single Widget -->
                 <div class="col-lg-3 col-md-6 col-12">
                     <div class="single-widget widget-info">
-                        <a class="widget-info-logo" href="#">
+                        <a class="widget-info-logo" href="./">
                             <img src="assets/images/aluthmalu-logo-footer.png" alt="white logo" style="width: 200px;"></a>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis orci ac
