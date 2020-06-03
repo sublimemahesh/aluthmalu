@@ -1,12 +1,25 @@
+<?php
+include './class/include.php';
+
+if (isset($_GET['type'])) {
+    $type = $_GET['type'];
+    $PRODUCT_TYPE = new ProductType($type);
+    $PRODUCT_OBJ = new Product(NULL);
+    $PRODUCTS = $PRODUCT_OBJ->allProductsByType($type);
+   
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
 
-    
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Aluthmalu.lk || Order Product</title>
+        <title>Aluthmalu.lk || Products</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="apple-touch-icon" href="assets/images/favicon.png">
@@ -51,10 +64,11 @@
                  data-white-overlay="2">
                 <div class="container">
                     <div class="tm-breadcrumb">
-                        <h2 class="white">Order Product</h2>
+                        <h2 class="white"><?php echo $PRODUCT_TYPE->name ?></h2>
                         <ul>
-                            <li><a href="./">Home</a></li>
-                            <li>Order Product</li>
+                            <li><a href="./" class="white">Home</a></li>
+                            <li>Products</li>
+                            <li><?php echo $PRODUCT_TYPE->name ?></li>
                         </ul>
                     </div>
                 </div>
@@ -65,83 +79,41 @@
             <!-- Page Content -->
             <main class="page-content">
 
-                <!-- Contact Area -->
-                <div class="tm-contact-area tm-section tm-padding-section bg-white">
+                <!-- Products Area -->
+                <div id="tm-shop-area" class="tm-section tm-products-area tm-padding-section bg-white">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md--12">
-                                <div class="tm-contact">
-                                    <h2>Order Now</h2>
-                                    <form id="tm-contactform" action="http://thememarch.com/demo/html/malic/malic/assets/php/mailer.php"
-                                          class="tm-contact-forminner tm-form" method="POST">
-                                        <div class="tm-form-inner">
+                            <?php
+                            foreach ($PRODUCTS as $product) {
+                                ?>
+                                <!-- Single Product -->
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-12 pb-30">
+                                    <div class="tm-pricebox text-center">
+                                        <div class="tm-product text-center tm-scrollanim">
+                                            <div class="tm-product-topside">
+                                                <img src="upload/product-type/product/<?php echo $product['image_name']; ?>" alt="product image">
+                                                <ul class="tm-product-actions">
+                                                    <li><a href="view-product.php?id=<?php echo $product['id']; ?>" class="tm-readmore">View More</a></li>
 
-                                            <div class="col-md-6 tm-form-field tm-form-fieldhalf">
-                                                <label for="contact-form-name">Select Your Product</label>
-                                                <select>
-                                                    <option>Prawns</option>
-                                                    <option>Fish</option>
-                                                    <option>Dry Fish</option>
-                                                    <option>Cuttle Fish</option>
-                                                </select>
+                                                </ul>
                                             </div>
-
-                                            <div class="col-md-6 tm-form-field tm-form-fieldhalf">
-                                                <label for="contact-form-name">Quantity</label>
-                                                <input type="text" id="contact-form-name" placeholder="Your Quantity here"
-                                                       name="quantity" required>
-                                            </div>
-
-                                            <div class="col-md-6 tm-form-field tm-form-fieldhalf">
-                                                <label for="contact-form-name">Amount</label>
-                                                <input type="text" id="contact-form-name" placeholder="Your Amount (Rs) here"
-                                                       name="amount" required>
-                                            </div>
-
-                                            <div class="col-md-6 tm-form-field tm-form-fieldhalf">
-                                                <label for="contact-form-name">Name</label>
-                                                <input type="text" id="contact-form-name" placeholder="Your name here"
-                                                       name="fname" required>
-                                            </div>
-
-
-
-                                            <div class="col-md-6 tm-form-field tm-form-fieldhalf">
-                                                <label for="contact-form-name">Address</label>
-                                                <input type="text" id="contact-form-name" placeholder="Your address here"
-                                                       name="address" required>
-                                            </div>
-
-                                            <div class="col-md-6 tm-form-field tm-form-fieldhalf">
-                                                <label for="contact-form-name">City</label>
-                                                <input type="text" id="contact-form-name" placeholder="Your city here"
-                                                       name="city" required>
-                                            </div>
-
-                                            <div class="col-md-6 tm-form-field tm-form-fieldhalf">
-                                                <label for="contact-form-email">Email</label>
-                                                <input type="email" id="contact-form-email"
-                                                       placeholder="malicfishing@gmail.com" name="email" required>
-                                            </div>
-                                            <div class="col-md-6 tm-form-field tm-form-fieldhalf">
-                                                <label for="contact-form-phone">Phone</label>
-                                                <input type="text" id="contact-form-phone"
-                                                       placeholder="Your phone number here" name="phone" required>
-                                            </div>
-
-                                            <div class="col-md-6 tm-form-field">
-                                                <button type="submit" class="tm-button tm-button-block">Oder Now</button>
+                                            <div class="tm-product-bottomside" id="product">
+                                                <h6 class="tm-product-title" id="white"><a href="view-product.php?id=<?php echo $product['id']; ?>"><?php echo $product['name']; ?></a></h6>
+                                                <span class="tm-product-price" id="white"><b>Rs. <?php echo $product['price']; ?></b></span>
                                             </div>
                                         </div>
-                                    </form>
-                                    <p class="form-messages"></p>
+                                    </div>
                                 </div>
-                            </div>
+                                <!--// Single Product -->
+                                <?php
+                            }
+                            ?>
+
 
                         </div>
                     </div>
                 </div>
-                <!--// Contact Area -->
+                <!--// Products Area -->
 
 
             </main>
@@ -280,9 +252,6 @@
         <!--// Wrapper -->
 
         <!-- JS FILES HERE -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEDd_Sv9-p-I6bebrAMpmZBQvalqBE5Ds"></script>
-        <script src="assets/js/mapjs/google-map.js"></script>
-
         <!-- inject:js -->
         <script src="assets/js/vendors/plugins.min.js"></script>
         <script src="assets/js/main.js"></script>
@@ -290,5 +259,5 @@
     </body>
 
 
-    
+    <!-- Mirrored from thememarch.com/demo/html/malic/malic/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 26 May 2020 01:35:14 GMT -->
 </html>
