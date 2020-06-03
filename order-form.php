@@ -1,6 +1,3 @@
-<?php
-include './class/include.php';
-?>
 <!DOCTYPE html>
 <html lang="zxx">
 
