@@ -27,18 +27,27 @@
                 <nav class="tm-header-nav">
                     <ul>
                         <li><a href="./">Home</a></li>
-                        <li><a href="about.php">About Us</a></li>
-                        <li><a href="service.php">Our Service</a></li>
                         <li class="tm-header-nav-dropdown">
                             <a href="#">Products</a>
-                            <ul>
-                                <li><a href="fish.php">Fresh Fish</a></li>  
-                                <li><a href="seafood.php">Seafood</a></li>                                             
-                                <li><a href="dry-fish.php">Dry Fish</a></li>  
-                            </ul>
+                            
+                                <ul>
+                                    <?php
+                            foreach (ProductType::all() as $product_type) {
+                                ?>
+                                    <li><a href="products.php?type=<?php echo $product_type['id']; ?>"><?php echo $product_type['name']; ?></a></li>                                   
+                                <?php } ?>
+                                </ul>
+                           
                         </li>
+                        <li><a href="service.php">Services</a></li>
+                        <li><a href="about.php">About Us</a></li>
+
+
                         <li><a href="contact.php">Contact Us</a></li>
-                        <li><a href="order-form.php"><i class="ion-android-cart"></i></a></li>
+                        <button style="border-radius: 50px;"><li><a href="order-form.php">
+                                    <img src="assets/images/shopping-cart.png" alt=""/> ORDER NOW
+                                </a></button></li></button
+
                     </ul>
                 </nav> 
                 <div class="tm-mobilenav"></div>

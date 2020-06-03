@@ -2,6 +2,9 @@
 include './class/include.php';
 
 $ABOUT_PAGE = new Page(1);
+
+$PRODUCT_TYPE = new ProductType($id);
+
 ?>
 
 
@@ -124,282 +127,251 @@ $ABOUT_PAGE = new Page(1);
 
 
                         <div class="row mt-30-reverse"> 
-
-                            <!-- Single Service -->
-                            <div class="col-lg-4 col-md-6 col-12 mt-30">
-                                <div class="tm-service text-center tm-scrollanim">
-                                    <div class="tm-service-inner">
-                                        <div class="tm-service-frontside" data-bgimage="assets/images/service-image-1.jpg">
-                                            <h6>Sea Food</h6>
-                                        </div>
-                                        <div class="tm-service-backside">
-                                            <h6><a href="seafood.php">Sea Food</a></h6>
-                                            <a href="seafood.php"><p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                                </p></a>
-                                            <a href="seafood.php" class="tm-readmore">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-
-                            <!-- Single Service -->
-                            <div class="col-lg-4 col-md-6 col-12 mt-30">
-                                <div class="tm-service text-center tm-scrollanim">
-                                    <div class="tm-service-inner">
-                                        <div class="tm-service-frontside" data-bgimage="assets/images/service-image-2.jpg">
-                                            <h6>Fresh Fish</h6>
-                                        </div>
-                                        <div class="tm-service-backside">
-                                            <h6><a href="fish.php">Fresh Fish</a></h6>
-                                            <a href="fish.php"><p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                                </p></a>
-                                            <a href="fish.php" class="tm-readmore">View more</a>
+                  
+                       <?php foreach (ProductType::all() as $product_type){?>
+                               
+                               
+                           
+                                <!-- Single Service -->
+                                <div class="col-lg-4 col-md-6 col-12 mt-30">
+                                    <div class="tm-service text-center tm-scrollanim">
+                                        <div class="tm-service-inner">
+                                            <div class="tm-service-frontside" data-bgimage="upload/product-type/<?php echo $product_type['image_name']?>">
+                                                <h6><?php echo $product_type['name'] ?></h6>
+                                            </div>
+                                            <div class="tm-service-backside">
+                                                <h6><a href="products.php?type=<?php echo $product_type['id'] ?>"><?php echo $product_type['name'] ?></a></h6>
+                                                <a href="products.php?type=<?php echo $product_type['id'] ?>"><p>
+                                                        <?php echo $product_type['short_description']?>
+                                                    </p></a>
+                                                <a href="products.php?type=<?php echo $product_type['id'] ?>" class="tm-readmore">View more</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div> 
-
-                            <!-- Single Service -->
-                            <div class="col-lg-4 col-md-6 col-12 mt-30">
-                                <div class="tm-service text-center tm-scrollanim">
-                                    <div class="tm-service-inner">
-                                        <div class="tm-service-frontside" data-bgimage="assets/images/service-image-3.jpg">
-                                            <h6>Dry Fish</h6>
-                                        </div>
-                                        <div class="tm-service-backside">
-                                            <h6><a href="dry-fish.php">Dry Fish</a></h6>
-                                            <a href="dry-fish.php"><p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                                </p></a>
-                                            <a href="dry-fish.php" class="tm-readmore">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
+                                </div> 
+                       <?php } ?>    
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!--// Product Type Area -->
+                    <!--// Product Type Area -->
 
 
 
-                <!-- Service Area -->              
-                <div id="tm-news-area" class="tm-section tm-blog-area tm-padding-section-bottom pt-30" data-bgimage="assets/images/offer-area-bg.jpg" style='background-image: url("assets/images/offer-area-bg.jpg");'>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-xl-7 col-lg-8 col-md-9 col-12">
-                                <div class="tm-sectiontitle text-center">
-                                    <h2 class="white">Our Services</h2>
-                                    <span class="tm-sectiontitle-divider">
-                                        <img src="assets/images/icons/icon-divider-img.png" alt="section divider">
-                                    </span>
-                                    <p class="white">Lorem Ipsum is a latin placeholder text commonly used to fulfill certain areas of
-                                        your website or app where content is not the main concern of the developer.</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="row">
-
-                            <?php
-                            $SERVICE = new Service(NULL);
-                            foreach ($SERVICE->all() as $key => $service) {
-                                if ($key < 6) {
-                                    ?>
-                                    <!-- Blog Single Item -->
-                                    <div class="col-lg-4 pt-30">
-                                        <div class="tm-blog tm-scrollanim">
-                                            <div class="tm-blog-topside">
-                                                <div class="tm-blog-thumb">
-                                                    <a href="view-service.php?id=<?php echo $service['id'] ?>"><img src="upload/service/<?php echo $service['image_name'] ?>" alt="blog image" alt="blog image"></a>
-                                                </div>
-                                                <a href="view-service.php?id=<?php echo $service['id'] ?>" class="tm-blog-metahighlight tm-readmore"> <?php echo $service['title'] ?></a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <!--// Blog Single Item -->
-                                    <?php
-                                }
-                            }
-                            ?>
-
-                            <div class="col-md-4" width="100%"></div>
-                            <div class="col-md-4 text-center pt-30">
-                                <a href="service.php" class="tm-button text-center">Read more</a>
-                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                            <div class="col-md-4" width="100%"></div>
-
-                        </div>
-                    </div>
-                </div>
-                <!--// Service Area -->
-
-
-
-                <!-- Testimonial Area -->
-                <div class="tm-section tm-testimonial-area tm-padding-section-bottom bg-white bg-pattern-transparent pt-30">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-xl-7 col-lg-8 col-md-9 col-12">
-                                <div class="tm-sectiontitle text-center">
-                                    <h2>Feedback From our Clients</h2>
-                                    <span class="tm-sectiontitle-divider">
-                                        <img src="assets/images/icons/icon-divider-img.png" alt="section divider">
-                                    </span>
-                                    <p>Lorem Ipsum is a latin placeholder text commonly used to fulfill certain areas of
-                                        your website or app where content is not the main concern of the developer.</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="row tm-testimonial-slider">
-                            <?php
-                            $COMMENT = new Comments(NULL);
-                            foreach ($COMMENT->activeComments() as $comment) {
-                                ?>
-                                <!-- Single Testimonial -->
-                                <div class="col-lg-6">
-                                    <div class="tm-testimonial tm-scrollanim">
-                                        <div class="tm-testimonial-top">
-                                            <div class="tm-testimonial-author">
-                                                <div class="tm-testimonial-image">
-                                                    <img src="upload/comments/<?php echo $comment['image_name']; ?>" alt="author image">
-                                                </div>
-                                                <div class="tm-testimonial-authorcontent">
-                                                    <h6><?php echo $comment['name']; ?></h6>
-                                                    <p><?php echo $comment['country']; ?></p>
-                                                </div>
-                                            </div>
-                                            <div class="tm-testimonial-ratings">
-                                                <span class="active"><i class="ion-android-star"></i></span>
-                                                <span class="active"><i class="ion-android-star"></i></span>
-                                                <span class="active"><i class="ion-android-star"></i></span>
-                                                <span class="active"><i class="ion-android-star"></i></span>
-                                                <span class="active"><i class="ion-android-star"></i></span>
-                                            </div>
-                                        </div>
-                                        <p><?php echo $comment['comment']; ?></p>
+                    <!-- Service Area -->              
+                    <div id="tm-news-area" class="tm-section tm-blog-area tm-padding-section-bottom pt-30" data-bgimage="assets/images/offer-area-bg.jpg" style='background-image: url("assets/images/offer-area-bg.jpg");'>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-7 col-lg-8 col-md-9 col-12">
+                                    <div class="tm-sectiontitle text-center">
+                                        <h2 class="white">Our Services</h2>
+                                        <span class="tm-sectiontitle-divider">
+                                            <img src="assets/images/icons/icon-divider-img.png" alt="section divider">
+                                        </span>
+                                        <p class="white">Lorem Ipsum is a latin placeholder text commonly used to fulfill certain areas of
+                                            your website or app where content is not the main concern of the developer.</p>
                                     </div>
                                 </div>
-                                <!--// Single Testimonial -->
+                            </div>
+
+
+                            <div class="row">
 
                                 <?php
-                            }
-                            ?>
+                                $SERVICE = new Service(NULL);
+                                foreach ($SERVICE->all() as $key => $service) {
+                                    if ($key < 6) {
+                                        ?>
+                                        <!-- Blog Single Item -->
+                                        <div class="col-lg-4 pt-30">
+                                            <div class="tm-blog tm-scrollanim">
+                                                <div class="tm-blog-topside">
+                                                    <div class="tm-blog-thumb">
+                                                        <a href="view-service.php?id=<?php echo $service['id'] ?>"><img src="upload/service/<?php echo $service['image_name'] ?>" alt="blog image" alt="blog image"></a>
+                                                    </div>
+                                                    <a href="view-service.php?id=<?php echo $service['id'] ?>" class="tm-blog-metahighlight tm-readmore"> <?php echo $service['title'] ?></a>
+                                                </div>
 
+                                            </div>
+                                        </div>
+                                        <!--// Blog Single Item -->
+                                        <?php
+                                    }
+                                }
+                                ?>
+
+                                <div class="col-md-4" width="100%"></div>
+                                <div class="col-md-4 text-center pt-30">
+                                    <a href="service.php" class="tm-button text-center">Read more</a>
+                                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="col-md-4" width="100%"></div>
+
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!--// Testimonial Area -->
+                    <!--// Service Area -->
 
 
 
-                <!-- Brand Logos -->
-                <div class="tm-section tm-brandlogo-area tm-padding-section bg-white">
-                    <div class="container">
-                        <div class="tm-brandlogo-slider">
-
-                            <!-- Brang Logo Single -->
-                            <div class="tm-brandlogo">
-                                <a href="#">
-                                    <img src="assets/images/brand-logo-1.png" alt="brand-logo">
-                                </a>
+                    <!-- Testimonial Area -->
+                    <div class="tm-section tm-testimonial-area tm-padding-section-bottom bg-white bg-pattern-transparent pt-30">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-7 col-lg-8 col-md-9 col-12">
+                                    <div class="tm-sectiontitle text-center">
+                                        <h2>Feedback From our Clients</h2>
+                                        <span class="tm-sectiontitle-divider">
+                                            <img src="assets/images/icons/icon-divider-img.png" alt="section divider">
+                                        </span>
+                                        <p>Lorem Ipsum is a latin placeholder text commonly used to fulfill certain areas of
+                                            your website or app where content is not the main concern of the developer.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <!--// Brang Logo Single -->
 
-                            <!-- Brang Logo Single -->
-                            <div class="tm-brandlogo">
-                                <a href="#">
-                                    <img src="assets/images/brand-logo-2.png" alt="brand-logo">
-                                </a>
+
+                            <div class="row tm-testimonial-slider">
+                                <?php
+                                $COMMENT = new Comments(NULL);
+                                foreach ($COMMENT->activeComments() as $comment) {
+                                    ?>
+                                    <!-- Single Testimonial -->
+                                    <div class="col-lg-6">
+                                        <div class="tm-testimonial tm-scrollanim">
+                                            <div class="tm-testimonial-top">
+                                                <div class="tm-testimonial-author">
+                                                    <div class="tm-testimonial-image">
+                                                        <img src="upload/comments/<?php echo $comment['image_name']; ?>" alt="author image">
+                                                    </div>
+                                                    <div class="tm-testimonial-authorcontent">
+                                                        <h6><?php echo $comment['name']; ?></h6>
+                                                        <p><?php echo $comment['country']; ?></p>
+                                                    </div>
+                                                </div>
+                                                <div class="tm-testimonial-ratings">
+                                                    <span class="active"><i class="ion-android-star"></i></span>
+                                                    <span class="active"><i class="ion-android-star"></i></span>
+                                                    <span class="active"><i class="ion-android-star"></i></span>
+                                                    <span class="active"><i class="ion-android-star"></i></span>
+                                                    <span class="active"><i class="ion-android-star"></i></span>
+                                                </div>
+                                            </div>
+                                            <?php echo $comment['comment']; ?>
+                                        </div>
+                                    </div>
+                                    <!--// Single Testimonial -->
+
+                                    <?php
+                                }
+                                ?>
+
                             </div>
-                            <!--// Brang Logo Single -->
-
-                            <!-- Brang Logo Single -->
-                            <div class="tm-brandlogo">
-                                <a href="#">
-                                    <img src="assets/images/brand-logo-3.png" alt="brand-logo">
-                                </a>
-                            </div>
-                            <!--// Brang Logo Single -->
-
-                            <!-- Brang Logo Single -->
-                            <div class="tm-brandlogo">
-                                <a href="#">
-                                    <img src="assets/images/brand-logo-4.png" alt="brand-logo">
-                                </a>
-                            </div>
-                            <!--// Brang Logo Single -->
-
-                            <!-- Brang Logo Single -->
-                            <div class="tm-brandlogo">
-                                <a href="#">
-                                    <img src="assets/images/brand-logo-5.png" alt="brand-logo">
-                                </a>
-                            </div>
-                            <!--// Brang Logo Single -->
-
-                            <!-- Brang Logo Single -->
-                            <div class="tm-brandlogo">
-                                <a href="#">
-                                    <img src="assets/images/brand-logo-1.png" alt="brand-logo">
-                                </a>
-                            </div>
-                            <!--// Brang Logo Single -->
-
-                            <!-- Brang Logo Single -->
-                            <div class="tm-brandlogo">
-                                <a href="#">
-                                    <img src="assets/images/brand-logo-2.png" alt="brand-logo">
-                                </a>
-                            </div>
-                            <!--// Brang Logo Single -->
-
-                            <!-- Brang Logo Single -->
-                            <div class="tm-brandlogo">
-                                <a href="#">
-                                    <img src="assets/images/brand-logo-3.png" alt="brand-logo">
-                                </a>
-                            </div>
-                            <!--// Brang Logo Single -->
-
-                            <!-- Brang Logo Single -->
-                            <div class="tm-brandlogo">
-                                <a href="#">
-                                    <img src="assets/images/brand-logo-4.png" alt="brand-logo">
-                                </a>
-                            </div>
-                            <!--// Brang Logo Single -->
-
-                            <!-- Brang Logo Single -->
-                            <div class="tm-brandlogo">
-                                <a href="#">
-                                    <img src="assets/images/brand-logo-5.png" alt="brand-logo">
-                                </a>
-                            </div>
-                            <!--// Brang Logo Single -->
-
                         </div>
                     </div>
-                </div>
-                <!--// Brand Logos --> 
+                    <!--// Testimonial Area -->
 
 
 
-            </main>
-            <!--// Page Content -->
+                    <!-- Brand Logos -->
+                    <div class="tm-section tm-brandlogo-area tm-padding-section bg-white">
+                        <div class="container">
+                            <div class="tm-brandlogo-slider">
+
+                                <!-- Brang Logo Single -->
+                                <div class="tm-brandlogo">
+                                    <a href="#">
+                                        <img src="assets/images/brand-logo-1.png" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <!--// Brang Logo Single -->
+
+                                <!-- Brang Logo Single -->
+                                <div class="tm-brandlogo">
+                                    <a href="#">
+                                        <img src="assets/images/brand-logo-2.png" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <!--// Brang Logo Single -->
+
+                                <!-- Brang Logo Single -->
+                                <div class="tm-brandlogo">
+                                    <a href="#">
+                                        <img src="assets/images/brand-logo-3.png" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <!--// Brang Logo Single -->
+
+                                <!-- Brang Logo Single -->
+                                <div class="tm-brandlogo">
+                                    <a href="#">
+                                        <img src="assets/images/brand-logo-4.png" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <!--// Brang Logo Single -->
+
+                                <!-- Brang Logo Single -->
+                                <div class="tm-brandlogo">
+                                    <a href="#">
+                                        <img src="assets/images/brand-logo-5.png" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <!--// Brang Logo Single -->
+
+                                <!-- Brang Logo Single -->
+                                <div class="tm-brandlogo">
+                                    <a href="#">
+                                        <img src="assets/images/brand-logo-1.png" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <!--// Brang Logo Single -->
+
+                                <!-- Brang Logo Single -->
+                                <div class="tm-brandlogo">
+                                    <a href="#">
+                                        <img src="assets/images/brand-logo-2.png" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <!--// Brang Logo Single -->
+
+                                <!-- Brang Logo Single -->
+                                <div class="tm-brandlogo">
+                                    <a href="#">
+                                        <img src="assets/images/brand-logo-3.png" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <!--// Brang Logo Single -->
+
+                                <!-- Brang Logo Single -->
+                                <div class="tm-brandlogo">
+                                    <a href="#">
+                                        <img src="assets/images/brand-logo-4.png" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <!--// Brang Logo Single -->
+
+                                <!-- Brang Logo Single -->
+                                <div class="tm-brandlogo">
+                                    <a href="#">
+                                        <img src="assets/images/brand-logo-5.png" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <!--// Brang Logo Single -->
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--// Brand Logos --> 
 
 
 
-            <!-- Footer -->
-            <?php include './footer.php'; ?>
+                </main>
+                <!--// Page Content -->
+
+
+
+                <!-- Footer -->
+                <?php include './footer.php'; ?>
             <!--// Footer -->
 
 
