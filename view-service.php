@@ -87,33 +87,59 @@ $SERVICE = new Service($id);
                                     <p><?php echo $SERVICE->description ?></p>                                  
                                 </div>
                             </div>
+                          
+                            
                             <div class="col-lg-4">
-                                <div class="widgets">
+                            <div class="widgets widgets-blog">
 
-                                    <!-- Single Widget -->
-                                    <div class="single-widget widget-services">
-                                        <h6 class="widget-title">Other Services</h6>
-                                         <?php
+                                <!-- Single Widget -->
+                                <div class="single-widget widget-categories">
+                                    <h6 class="widget-title">Other Services</h6>
+                                        <?php
                                     $SERVICE = new Service(NULL);
                                     foreach ($SERVICE->all()as $key => $service) {
                                         if ($key < 7) {
                                             ?>
-                                        <ul>
-                                            <li>
-                                                <a class="is-active" href="view-service.php?id=<?php echo $service['id'] ?>">
+                                    <ul>
+                                        <li><a class="is-active" href="view-service.php?id=<?php echo $service['id'] ?>">
                                                     <?php echo $service['title']; ?>
-                                                </a>
-                                            </li>                                      
-                                        </ul>
-                                        <?php
+                                                </a></li>
+                                        
+                                    </ul>
+                                    
+                                    <?php
                                         }
                                     }
                                     ?>
+                                </div>
+                                <!--// Single Widget -->
+
+                                
+                                   <!-- Single Widget -->
+                                    <div class="single-widget widget-popularproduct">
+                                        <h6 class="widget-title">Our Products</h6>
+                                        <ul>
+                                             <?php foreach (ProductType::all() as $product_type) { ?>
+                                            <li>
+                                                <a href="products.php?type=<?php echo $product_type['id'] ?>" class="widget-popularproduct-image">
+                                                    <img src="upload/product-type/<?php echo $product_type['image_name']; ?>"
+                                                         alt="product thumbnail">
+                                                </a>
+                                                <div class="widget-popularproduct-content">
+                                                    <h6><a href="products.php?type=<?php echo $product_type['id'] ?>"><?php echo $product_type['name']; ?></a></h6>
+
+                                                </div>
+                                            </li>
+                                             <?php } ?>
+                                        </ul>
                                     </div>
                                     <!--// Single Widget -->
+                                
 
-                                </div>
                             </div>
+                        </div>
+                            
+                            
                         </div>
                     </div>
                 </div>

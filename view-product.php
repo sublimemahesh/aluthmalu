@@ -173,42 +173,24 @@ $PRODUCT_TYPE = new ProductType($PRODUCT->product_type);
 
                             </div>
                             <div class="col-lg-3 col-12 order-2 order-lg-1">
-                                <div class="widgets widgets-shop">
+                                <div class="widgets widgets-blog">
 
-                                    <!-- Single Widget -->
+                                     <!-- Single Widget -->
                                     <div class="single-widget widget-popularproduct">
-                                        <h6 class="widget-title">Product Types</h6>
+                                        <h6 class="widget-title">Our Products</h6>
                                         <ul>
+                                             <?php foreach (ProductType::all() as $product_type) { ?>
                                             <li>
-                                                <a href="seafood.php" class="widget-popularproduct-image">
-                                                    <img src="assets/images/products/product-image-thumb-1.jpg"
+                                                <a href="products.php?type=<?php echo $product_type['id'] ?>" class="widget-popularproduct-image">
+                                                    <img src="upload/product-type/<?php echo $product_type['image_name']; ?>"
                                                          alt="product thumbnail">
                                                 </a>
                                                 <div class="widget-popularproduct-content">
-                                                    <h6><a href="seafood.php">Sea Foods</a></h6>
+                                                    <h6><a href="products.php?type=<?php echo $product_type['id'] ?>"><?php echo $product_type['name']; ?></a></h6>
 
                                                 </div>
                                             </li>
-                                            <li>
-                                                <a href="fish.php" class="widget-popularproduct-image">
-                                                    <img src="assets/images/products/product-image-thumb-2.jpg"
-                                                         alt="product thumbnail">
-                                                </a>
-                                                <div class="widget-popularproduct-content">
-                                                    <h6><a href="fish.php">Fresh Fish</a></h6>
-
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a href="dry-fish.php" class="widget-popularproduct-image">
-                                                    <img src="assets/images/products/product-image-thumb-3.jpg"
-                                                         alt="product thumbnail">
-                                                </a>
-                                                <div class="widget-popularproduct-content">
-                                                    <h6><a href="dry-fish.php">Dry Fish</a></h6>
-
-                                                </div>
-                                            </li>
+                                             <?php } ?>
                                         </ul>
                                     </div>
                                     <!--// Single Widget -->
