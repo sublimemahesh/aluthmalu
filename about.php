@@ -2,7 +2,6 @@
 include './class/include.php';
 
 $ABOUT_US_PAGE = new Page(2);
-
 ?>
 
 
@@ -100,15 +99,29 @@ $ABOUT_US_PAGE = new Page(2);
                                 <div class="tm-about-content">
                                     <h6 style="font-size: 45px;">Let's get to Know about Us</h6>
                                     <p><?php echo $ABOUT_US_PAGE->description ?></p>
-                                   
+
                                     <ul class="stylish-list-color">
-                                        <li><i class="ion-android-checkmark-circle"></i> Scale, flexibility and a wide range of fish products experience.</li>
-                                        <li><i class="ion-android-checkmark-circle"></i> Obtaining quality products from major production areas.</li>
-                                        <li><i class="ion-android-checkmark-circle"></i> Customers and suppliers to their requirement efficiently and cost effectively.</li>
+                                        
+                                        <li>
+                                            <i class="ion-android-checkmark-circle"></i>
+                                            Scale, flexibility and a wide range of fish products experience.
+                                        </li>
+                                        
+                                        <li>
+                                            <i class="ion-android-checkmark-circle"></i> 
+                                            Obtaining quality products from major production areas.
+                                        </li>
+                                        
+                                        <li>
+                                            <i class="ion-android-checkmark-circle"></i> 
+                                            Customers and suppliers to their requirement efficiently and cost effectively.
+                                        </li>
+                                        
                                     </ul>
 
                                 </div>
                             </div>
+                            
                             <div class="col-lg-6 col-md-8 col-12 order-1 order-lg-2">
                                 <div class="tm-about-image">
                                     <img src="assets/images/about-image.png" alt="about image">
@@ -119,7 +132,7 @@ $ABOUT_US_PAGE = new Page(2);
                 </section>
                 <!--// About Area -->
 
-                
+
             </main>
             <!--// Page Content -->
 
