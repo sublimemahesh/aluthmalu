@@ -48,7 +48,7 @@ $ABOUT_US_PAGE = new Page(2);
                         <div class="tm-preloader-logo">
                             <img src="assets/images/aluthmalu-logo.png" alt="logo">
                             <br/>
-                            <h2>www.aluthmalu.lk</h2>
+                            <h2>Let's get to Know about Us</h2>
                         </div>
                         <span class="tm-preloader-progress"></span>
                     </div>
@@ -98,8 +98,7 @@ $ABOUT_US_PAGE = new Page(2);
                         <div class="row align-items-center">
                             <div class="col-lg-6 col-12 order-2 order-lg-1">
                                 <div class="tm-about-content">
-                                    <h1>Let's get to Know about Us</h1>
-                                    <h3>Fishing techniques are methods for catching fish</h3>
+                                    <h6 style="font-size: 45px;">Let's get to Know about Us</h6>
                                     <p><?php echo $ABOUT_US_PAGE->description ?></p>
                                    
                                     <ul class="stylish-list-color">
