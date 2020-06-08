@@ -133,7 +133,7 @@ $PRODUCT_TYPE = new ProductType($PRODUCT->product_type);
                                                         <div class="tm-quantitybox">
                                                             <input type="text" value="1">
                                                         </div>
-                                                        <a href="order-form.php" class="tm-button tm-button-dark">Add To Cart</a>
+                                                        <a href="shopping-cart.php" class="tm-button tm-button-dark">Add To Cart</a>
                                                     </div>  
                                                 </div>
 
