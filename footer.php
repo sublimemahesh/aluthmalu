@@ -3,7 +3,7 @@ $ABOUT_PAGE = new Page(1);
 ?>
 
 <div class="tm-footer">
-    <div class="tm-footer-toparea tm-padding-section" data-bgimage="assets/images/footer-area-bg.jpg" data-black-overlay="9">
+    <div class="tm-footer-toparea tm-padding-section" data-bgimage="assets/images/footer-area-bg.jpg" data-black-overlay="8">
         <div class="container">
             <div class="widgets widgets-footer row">
 
