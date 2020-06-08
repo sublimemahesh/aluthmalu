@@ -1,29 +1,43 @@
-<!DOCTYPE html>
 <?php
 include './class/include.php';
 ?>
+
+<!DOCTYPE html>
+
 <html lang="zxx">
 
 
-
     <head>
+        
+        
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
+        
+        
         <title>Aluthmalu.lk || Contact Us</title>
+        
+        
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        
         <link rel="apple-touch-icon" href="assets/images/favicon.png">
         <link rel="shortcut icon" href="assets/images/favicon.ico">
+        
 
         <!-- CSS FILES HERE -->
         <!-- inject:css -->
         <link rel="stylesheet" href="assets/css/vendors/plugins.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
         <!-- endinject -->
+        
+        
     </head>
 
+    
     <body>
 
+        
         <!-- Preloader -->
         <div class="tm-preloader">
             <div class="container">
@@ -42,13 +56,19 @@ include './class/include.php';
         </div>
         <!--// Preloader -->
 
+        
+        
         <!-- Wrapper -->
         <div id="wrapper" class="wrapper">
 
+            
+            
             <!-- Header -->
             <?php include './header.php'; ?>
             <!--// Header -->
 
+            
+            
             <!-- Breadcrumb Area -->
             <div class="tm-breadcrumb-area tm-padding-section bg-grey" data-bgimage="assets/images/breadcrumb-bg.jpg"
                  data-white-overlay="2">
@@ -65,6 +85,7 @@ include './class/include.php';
             <!--// Breadcrumb Area -->
 
 
+            
             <!-- Page Content -->
             <main class="page-content">
 
