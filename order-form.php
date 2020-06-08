@@ -17,7 +17,7 @@ include './class/include.php';
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="apple-touch-icon" href="assets/images/favicon.png">
         <link rel="shortcut icon" href="assets/images/favicon.ico">
-
+        <link href="assets/css/sweetalert.css" rel="stylesheet" type="text/css"/>
         <!-- CSS FILES HERE -->
         <!-- inject:css -->
         <link rel="stylesheet" href="assets/css/vendors/plugins.min.css">
@@ -75,10 +75,10 @@ include './class/include.php';
                 <div class="tm-contact-area tm-section tm-padding-section bg-white">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md--12">
+                            <div class="col-md-12">
                                 <div class="tm-contact">
-                                    <h2>Order Now</h2>
-                                    <form id="tm-contactform" action="http://thememarch.com/demo/html/malic/malic/assets/php/mailer.php"
+                                    <h2><b><i><u>Products Details</u></i></b></h2>
+                                    <form id="form-data" action="http://thememarch.com/demo/html/malic/malic/assets/php/mailer.php"
                                           class="tm-contact-forminner tm-form" method="POST">
 
                                         <!-- Collapse buttons -->
@@ -113,32 +113,33 @@ include './class/include.php';
                                                                         $PRODUCT_OBJ = new Product(NULL);
                                                                         $PRODUCT = $PRODUCT_OBJ->allProductsByType($product_type['id']);
                                                                         foreach ($PRODUCT as $product) {
-                                                                        
+                                                                            ?>
+
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <a href="product-details.html" class="tm-cart-productimage">
+                                                                                        <img src="upload/product-type/product/<?php echo $product['image_name'] ?>"
+                                                                                             alt="product image">
+                                                                                    </a>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <input type="text" name="product_name" id="product_name" value="<?php echo $product['name'] ?>" style="border:none  ">
+                                                                                </td>
+
+                                                                                <td class="tm-cart-price">
+                                                                                    <input type="text" name="product_price" id="product_price" value="<?php echo $product['price'] ?>" style="border:none  ">
+                                                                                </td>
+
+                                                                                <td>
+                                                                                    <div class="tm-quantitybox">
+                                                                                        <input type="text" id="value" value="0">
+                                                                                    </div>
+                                                                                </td>
+
+                                                                            </tr>
+                                                                            <?php
+                                                                        }
                                                                         ?>
-
-                                                                        <tr>
-                                                                            <td>
-                                                                                <a href="product-details.html" class="tm-cart-productimage">
-                                                                                    <img src="upload/product-type/product/<?php echo $product['image_name'] ?>"
-                                                                                         alt="product image">
-                                                                                </a>
-                                                                            </td>
-                                                                            <td>
-                                                                                <a href="product-details.html" class="tm-cart-productname"><?php echo $product['name'] ?></a>
-                                                                            </td>
-
-                                                                            <td class="tm-cart-price">Rs. <?php echo $product['price'] ?></td>
-
-                                                                            <td>
-                                                                                <div class="tm-quantitybox">
-                                                                                    <input type="text" value="0">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-<?php
-                                        }
-?>
                                                                     </tbody>
                                                                 </table>
                                                             </div>
@@ -154,61 +155,46 @@ include './class/include.php';
                                         ?>
                                         <div class="tm-form-inner">
 
-                                            <div class="col-md-6 tm-form-field tm-form-fieldhalf">
-                                                <label for="contact-form-name">Select Your Product</label>
-                                                <select>
-                                                    <option>Prawns</option>
-                                                    <option>Fish</option>
-                                                    <option>Dry Fish</option>
-                                                    <option>Cuttle Fish</option>
-                                                </select>
-                                            </div>
 
-                                            <div class="col-md-6 tm-form-field tm-form-fieldhalf">
-                                                <label for="contact-form-name">Quantity</label>
-                                                <input type="text" id="contact-form-name" placeholder="Your Quantity here"
-                                                       name="quantity" required>
-                                            </div>
 
-                                            <div class="col-md-6 tm-form-field tm-form-fieldhalf">
-                                                <label for="contact-form-name">Amount</label>
-                                                <input type="text" id="contact-form-name" placeholder="Your Amount (Rs) here"
-                                                       name="amount" required>
-                                            </div>
 
                                             <div class="col-md-6 tm-form-field tm-form-fieldhalf">
                                                 <label for="contact-form-name">Name</label>
-                                                <input type="text" id="contact-form-name" placeholder="Your name here"
-                                                       name="fname" required>
+                                                <input type="text" id="name" placeholder="Your name here"
+                                                       name="name" required>
                                             </div>
 
 
 
                                             <div class="col-md-6 tm-form-field tm-form-fieldhalf">
                                                 <label for="contact-form-name">Address</label>
-                                                <input type="text" id="contact-form-name" placeholder="Your address here"
+                                                <input type="text" id="address" placeholder="Your address here"
                                                        name="address" required>
                                             </div>
 
                                             <div class="col-md-6 tm-form-field tm-form-fieldhalf">
                                                 <label for="contact-form-name">City</label>
-                                                <input type="text" id="contact-form-name" placeholder="Your city here"
+                                                <input type="text" id="city" placeholder="Your city here"
                                                        name="city" required>
                                             </div>
 
-                                            <div class="col-md-6 tm-form-field tm-form-fieldhalf">
-                                                <label for="contact-form-email">Email</label>
-                                                <input type="email" id="contact-form-email"
-                                                       placeholder="malicfishing@gmail.com" name="email" required>
-                                            </div>
+
                                             <div class="col-md-6 tm-form-field tm-form-fieldhalf">
                                                 <label for="contact-form-phone">Phone</label>
-                                                <input type="text" id="contact-form-phone"
+                                                <input type="text" id="phone"
                                                        placeholder="Your phone number here" name="phone" required>
                                             </div>
 
+                                            <div class="col-md-12 tm-form-field tm-form-fieldhalf">
+                                                <label for="contact-form-email">Email</label>
+                                                <input type="email" id="email"
+                                                       placeholder="malicfishing@gmail.com" name="email" required>
+                                            </div>
+
                                             <div class="col-md-6 tm-form-field">
-                                                <button type="submit" class="tm-button tm-button-block">Oder Now</button>
+                                                <input id="order_now" type="submit" class="tm-button tm-button-block" value="Oder Now">
+                                                <input name="create" type="text" class="tm-button tm-button-block hidden" >
+
                                             </div>
                                         </div>
                                     </form>
@@ -243,6 +229,10 @@ include './class/include.php';
         <script src="assets/js/vendors/plugins.min.js"></script>
         <script src="assets/js/main.js"></script>
         <!-- endinject -->
+        <!--order form-->
+        <script src="assets/js/sweetalert.min.js" type="text/javascript"></script>
+        <script src="ajax/js/order-form.js" type="text/javascript"></script>
+
     </body>
 
 
