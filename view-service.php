@@ -39,7 +39,7 @@ $SERVICE = new Service($id);
                         <div class="tm-preloader-logo">
                             <img src="assets/images/aluthmalu-logo.png" alt="logo">
                             <br/>
-                            <h2>www.aluthmalu.lk</h2>
+                            <h2>Details Of Our Services</h2>
                         </div>
                         <span class="tm-preloader-progress"></span>
                     </div>

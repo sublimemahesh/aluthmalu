@@ -42,7 +42,7 @@ if (isset($_GET['type'])) {
                         <div class="tm-preloader-logo">
                             <img src="assets/images/aluthmalu-logo.png" alt="logo">
                             <br/>
-                            <h2>www.aluthmalu.lk</h2>
+                            <h2>Our Products</h2>
                         </div>
                         <span class="tm-preloader-progress"></span>
                     </div>
@@ -89,19 +89,23 @@ if (isset($_GET['type'])) {
                                 <!-- Single Product -->
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 pb-30">
                                     <div class="tm-pricebox text-center">
+                                        
                                         <div class="tm-product text-center tm-scrollanim">
+                                            <a href="view-product.php?id=<?php echo $product['id']; ?>">
                                             <div class="tm-product-topside">
                                                 <img src="upload/product-type/product/<?php echo $product['image_name']; ?>" alt="product image">
                                                 <ul class="tm-product-actions">
-                                                    <li><a href="view-product.php?id=<?php echo $product['id']; ?>" class="tm-readmore">View More</a></li>
+                                                    <li class="tm-readmore" id="yellow">View More</li>
 
                                                 </ul>
                                             </div>
                                             <div class="tm-product-bottomside" id="product">
-                                                <h6 class="tm-product-title" id="white"><a href="view-product.php?id=<?php echo $product['id']; ?>"><?php echo $product['name']; ?></a></h6>
+                                                <h6 class="tm-product-title" id="black"><?php echo $product['name']; ?></h6>
                                                 <span class="tm-product-price" id="white"><b>Rs. <?php echo $product['price']; ?></b></span>
                                             </div>
+                                         </a>
                                         </div>
+                                           
                                     </div>
                                 </div>
                                 <!--// Single Product -->
