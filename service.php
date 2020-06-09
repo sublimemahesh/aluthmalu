@@ -9,7 +9,7 @@ include './class/include.php';
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Aluthmalu.lk || Service</title>
+        <title>Aluthmalu.lk || Services</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="apple-touch-icon" href="assets/images/favicon.png">
@@ -79,7 +79,7 @@ include './class/include.php';
                             foreach ($SERVICE->all() as $service) {
                                 ?>
                                 <!-- Blog Single Item -->
-                                <div class="col-lg-4 pt-30">
+                                <div class="col-lg-4 pt-30 pb-30">
                                     <div class="tm-blog tm-scrollanim">
                                         <div class="tm-blog-topside">
                                             <div class="tm-blog-thumb">

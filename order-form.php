@@ -35,7 +35,7 @@ include './class/include.php';
                         <div class="tm-preloader-logo">
                             <img src="assets/images/aluthmalu-logo.png" alt="logo">
                             <br/>
-                            <h2>www.aluthmalu.lk</h2>
+                            <h2>Oder Your Products</h2>
                         </div>
                         <span class="tm-preloader-progress"></span>
                     </div>
