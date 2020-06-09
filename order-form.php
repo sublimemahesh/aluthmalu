@@ -117,22 +117,26 @@ include './class/include.php';
 
                                                                             <tr>
                                                                                 <td>
-                                                                                    <a href="product-details.html" class="tm-cart-productimage">
+                                                                                    <a href="view-product.php?id=<?php echo $product['id']; ?>" class="tm-cart-productimage">
                                                                                         <img src="upload/product-type/product/<?php echo $product['image_name'] ?>"
                                                                                              alt="product image">
                                                                                     </a>
                                                                                 </td>
                                                                                 <td>
-                                                                                    <input type="text" name="product_name" id="product_name" value="<?php echo $product['name'] ?>" style="border:none  ">
+                                                                                    <input type="text" name="product_name" id="product_name" value="<?php echo $product['name'] ?>" style="border:none" disabled="">
                                                                                 </td>
 
+
                                                                                 <td class="tm-cart-price">
-                                                                                    <input type="text" name="product_price" id="product_price" value="<?php echo $product['price'] ?>" style="border:none  ">
+                                                                                    <input type="text" name="product_price" id="product_price" value="<?php echo $product['price'] ?>"   style="border:none" disabled="">
+                                                                                <input type="text" id="prod" value="<?php echo $product['id'] ?>" name="prod[]"> 
                                                                                 </td>
+
 
                                                                                 <td>
                                                                                     <div class="tm-quantitybox">
-                                                                                        <input type="text" id="value" value="0">
+                                                                                       
+                                                                                        <input type="text" id="value" value="0" name="product_qty[]">
                                                                                     </div>
                                                                                 </td>
 
@@ -185,14 +189,14 @@ include './class/include.php';
                                                        placeholder="Your phone number here" name="phone" required>
                                             </div>
 
-                                            <div class="col-md-12 tm-form-field tm-form-fieldhalf">
+                                            <div class="col-md-12 tm-form-field">
                                                 <label for="contact-form-email">Email</label>
                                                 <input type="email" id="email"
                                                        placeholder="malicfishing@gmail.com" name="email" required>
                                             </div>
 
                                             <div class="col-md-6 tm-form-field">
-                                                <input id="order_now" type="submit" class="tm-button tm-button-block" value="Oder Now">
+                                                <input id="order_now" type="submit" class="tm-button tm-button-block" value="Order Now" style="width:12%;background-color:#007bff;color:white">
                                                 <input name="create" type="text" class="tm-button tm-button-block hidden" >
 
                                             </div>
@@ -229,6 +233,7 @@ include './class/include.php';
         <script src="assets/js/vendors/plugins.min.js"></script>
         <script src="assets/js/main.js"></script>
         <!-- endinject -->
+
         <!--order form-->
         <script src="assets/js/sweetalert.min.js" type="text/javascript"></script>
         <script src="ajax/js/order-form.js" type="text/javascript"></script>
