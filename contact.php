@@ -197,19 +197,19 @@ include './class/include.php';
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
                 <!--// Contact Area -->
 
 
 
                 <!-- Google Map -->
-                <div id="google-map" class="google-map">
-                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.7169017267956!2d80.21371001307674!3d6.033534895630315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae173ab164cc223%3A0x26f35b51c49d6d1d!2sSynotec%20Holdings%20Pvt.%20Ltd!5e0!3m2!1sen!2slk!4v1591701703939!5m2!1sen!2slk" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.7169017267956!2d80.21371001307674!3d6.033534895630315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae173ab164cc223%3A0x26f35b51c49d6d1d!2sSynotec%20Holdings%20Pvt.%20Ltd!5e0!3m2!1sen!2slk!4v1591701703939!5m2!1sen!2slk" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                 </div>
                 <!--// Google Map -->
 

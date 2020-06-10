@@ -3,10 +3,10 @@ include './class/include.php';
 
 if (isset($_GET['type'])) {
     $type = $_GET['type'];
-    $PRODUCT_TYPE = new ProductType($type);
+    $PRODUCT_TYPE1 = new ProductType($type);
     $PRODUCT_OBJ = new Product(NULL);
     $PRODUCTS = $PRODUCT_OBJ->allProductsByType($type);
-   
+ 
 }
 
 ?>
@@ -64,11 +64,11 @@ if (isset($_GET['type'])) {
                  data-white-overlay="2">
                 <div class="container">
                     <div class="tm-breadcrumb">
-                        <h2 class="white"><?php echo $PRODUCT_TYPE->name ?></h2>
+                        <h2 class="white"><?php echo $PRODUCT_TYPE1->name ?></h2>
                         <ul>
                             <li><a href="./" class="white">Home</a></li>
                             <li>Products</li>
-                            <li><?php echo $PRODUCT_TYPE->name ?></li>
+                            <li><?php echo $PRODUCT_TYPE1->name ?></li>
                         </ul>
                     </div>
                 </div>
