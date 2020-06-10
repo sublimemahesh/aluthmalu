@@ -77,7 +77,7 @@ include './class/include.php';
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="tm-contact">
-                                    <h2><b><i><u>Products Details</u></i></b></h2>
+                                    <h4>Products Details</h4>
                                     <form id="form-data" action="http://thememarch.com/demo/html/malic/malic/assets/php/mailer.php"
                                           class="tm-contact-forminner tm-form" method="POST">
 
@@ -97,10 +97,9 @@ include './class/include.php';
 
                                                             <!-- Shopping Cart Table -->
                                                             <div class="tm-cart-table table-responsive">
-                                                                <table class="table table-bordered mb-0">
+                                                                <table class="table table-bordered mb-0 table-primary">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th class="tm-cart-col-image" scope="col">Image</th>
                                                                             <th class="tm-cart-col-productname" scope="col">Product</th>
                                                                             <th class="tm-cart-col-price" scope="col">Price (per kg)</th>
                                                                             <th class="tm-cart-col-quantity" scope="col">Quantity (kg)</th>
@@ -116,12 +115,7 @@ include './class/include.php';
                                                                             ?>
 
                                                                             <tr>
-                                                                                <td>
-                                                                                    <a href="view-product.php?id=<?php echo $product['id']; ?>" class="tm-cart-productimage">
-                                                                                        <img src="upload/product-type/product/<?php echo $product['image_name'] ?>"
-                                                                                             alt="product image">
-                                                                                    </a>
-                                                                                </td>
+                                                                                
                                                                                 <td>
                                                                                     <input type="text" name="product_name" id="product_name" value="<?php echo $product['name'] ?>" style="border:none" disabled="">
                                                                                 </td>
@@ -129,14 +123,13 @@ include './class/include.php';
 
                                                                                 <td class="tm-cart-price">
                                                                                     <input type="text" name="product_price" id="product_price" value="<?php echo $product['price'] ?>"   style="border:none" disabled="">
-                                                                                <input type="text" id="prod" value="<?php echo $product['id'] ?>" name="prod[]"> 
                                                                                 </td>
 
 
                                                                                 <td>
                                                                                     <div class="tm-quantitybox">
-                                                                                       
-                                                                                        <input type="text" id="value" value="0" name="product_qty[]">
+
+                                                                                        <input type="text" id="value" value="0" name="product_qty[]" disabled="" style="border:white 1px solid">
                                                                                     </div>
                                                                                 </td>
 
@@ -157,42 +150,38 @@ include './class/include.php';
                                             <?php
                                         }
                                         ?>
+                                        
+                                        
+                                        <h4>Your Personal Details</h4>
+                                        
                                         <div class="tm-form-inner">
-
-
-
-
+                                            
                                             <div class="col-md-6 tm-form-field tm-form-fieldhalf">
-                                                <label for="contact-form-name">Name</label>
-                                                <input type="text" id="name" placeholder="Your name here"
+                                                <input type="text" id="name" placeholder="Enter Your Full Name"
                                                        name="name" required>
                                             </div>
 
 
 
                                             <div class="col-md-6 tm-form-field tm-form-fieldhalf">
-                                                <label for="contact-form-name">Address</label>
-                                                <input type="text" id="address" placeholder="Your address here"
+                                                <input type="text" id="address" placeholder="Enter Your Address"
                                                        name="address" required>
                                             </div>
 
                                             <div class="col-md-6 tm-form-field tm-form-fieldhalf">
-                                                <label for="contact-form-name">City</label>
-                                                <input type="text" id="city" placeholder="Your city here"
+                                                <input type="text" id="city" placeholder="Enter Your City"
                                                        name="city" required>
                                             </div>
 
 
                                             <div class="col-md-6 tm-form-field tm-form-fieldhalf">
-                                                <label for="contact-form-phone">Phone</label>
                                                 <input type="text" id="phone"
-                                                       placeholder="Your phone number here" name="phone" required>
+                                                       placeholder="Enter Your Phone Number" name="phone" required>
                                             </div>
 
                                             <div class="col-md-12 tm-form-field">
-                                                <label for="contact-form-email">Email</label>
                                                 <input type="email" id="email"
-                                                       placeholder="malicfishing@gmail.com" name="email" required>
+                                                       placeholder="Enter Your Email" name="email" required>
                                             </div>
 
                                             <div class="col-md-6 tm-form-field">

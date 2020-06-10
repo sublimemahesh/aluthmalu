@@ -100,7 +100,7 @@ $visitor_message = '<html xmlns="http://www.w3.org/1999/xhtml">
                                                         <table style="background-color:#f5f7fa" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#F5F7FA"> 
                                                             <tbody> 
                                                                 <tr> 
-                                                                    <td style="word-wrap:break-word;font-size:14px;color:#333;line-height:18px;font-family:Arial,Helvetica,sans-serif;padding:10px 20px" align="left"> <p> ' . $customer_msg. ' </p></td> 
+                                                                    <td style="word-wrap:break-word;font-size:14px;color:#333;line-height:18px;font-family:Arial,Helvetica,sans-serif;padding:10px 20px" align="left"> <p> ' . $customer_msg . ' </p></td> 
                                                                 </tr> 
                                                                 <tr> 
                                                                     <td style="word-wrap:break-word;font-size:14px;color:#333;line-height:10px;font-family:Arial,Helvetica,sans-serif;padding:10px 20px 10px" align="left"> <p> Best regards, </p>

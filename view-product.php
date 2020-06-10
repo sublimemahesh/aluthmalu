@@ -4,7 +4,7 @@ $id = $_GET['id'];
 $PRODUCT = new Product($id);
 
 $TYPE = $PRODUCT->product_type;
-$PRODUCT_TYPE = new ProductType($PRODUCT->product_type);
+$PRODUCT_TYPE2 = new ProductType($PRODUCT->product_type);
 ?>
 
 
@@ -110,20 +110,20 @@ $PRODUCT_TYPE = new ProductType($PRODUCT->product_type);
 
 
                                                 <ul class="tm-prodetails-infos">
-                                                    
-                                                    <li><b>Product Type</b> &nbsp;: &nbsp;<?php echo $PRODUCT_TYPE->name ?></li>
+
+                                                    <li><b>Product Type</b> &nbsp;: &nbsp;<?php echo $PRODUCT_TYPE2->name ?></li>
                                                     <li><b>Unit</b> &nbsp;: &nbsp;<?php echo $PRODUCT->unit ?></li>
 
-                                                        <?php
-                                                        if ($PRODUCT->in_stock == 0) {
-                                                            ?>
-                                                    <li><b>Available</b> &nbsp;: &nbsp;<span class="color-theme"> Not In stock</h6></span></li>
-                                                            <?php
-                                                        } else {
-                                                            ?>
-                                                    <li><b>Available</b> &nbsp;: &nbsp; <span class="color-theme"> In stock</h6></span></li>
-                                                        <?php }
+                                                    <?php
+                                                    if ($PRODUCT->in_stock == 0) {
                                                         ?>
+                                                        <li><b>Available</b> &nbsp;: &nbsp;<span class="color-theme"> Not In stock</h6></span></li>
+                                                        <?php
+                                                    } else {
+                                                        ?>
+                                                        <li><b>Available</b> &nbsp;: &nbsp; <span class="color-theme"> In stock</h6></span></li>
+                                                    <?php }
+                                                    ?>
 
                                                 </ul>
 
@@ -175,22 +175,22 @@ $PRODUCT_TYPE = new ProductType($PRODUCT->product_type);
                             <div class="col-lg-3 col-12 order-2 order-lg-1">
                                 <div class="widgets widgets-blog">
 
-                                     <!-- Single Widget -->
+                                    <!-- Single Widget -->
                                     <div class="single-widget widget-popularproduct">
                                         <h6 class="widget-title">Our Products</h6>
                                         <ul>
-                                             <?php foreach (ProductType::all() as $product_type) { ?>
-                                            <li>
-                                                <a href="products.php?type=<?php echo $product_type['id'] ?>" class="widget-popularproduct-image">
-                                                    <img src="upload/product-type/<?php echo $product_type['image_name']; ?>"
-                                                         alt="product thumbnail">
-                                                </a>
-                                                <div class="widget-popularproduct-content">
-                                                    <h6><a href="products.php?type=<?php echo $product_type['id'] ?>"><?php echo $product_type['name']; ?></a></h6>
+                                            <?php foreach (ProductType::all() as $product_type) { ?>
+                                                <li>
+                                                    <a href="products.php?type=<?php echo $product_type['id'] ?>" class="widget-popularproduct-image">
+                                                        <img src="upload/product-type/<?php echo $product_type['image_name']; ?>"
+                                                             alt="product thumbnail">
+                                                    </a>
+                                                    <div class="widget-popularproduct-content">
+                                                        <h6><a href="products.php?type=<?php echo $product_type['id'] ?>"><?php echo $product_type['name']; ?></a></h6>
 
-                                                </div>
-                                            </li>
-                                             <?php } ?>
+                                                    </div>
+                                                </li>
+                                            <?php } ?>
                                         </ul>
                                     </div>
                                     <!--// Single Widget -->
@@ -205,16 +205,19 @@ $PRODUCT_TYPE = new ProductType($PRODUCT->product_type);
                                             if ($key < 7) {
                                                 ?>
                                                 <ul>
-                                                    <li>
-                                                        <a href="view-service.php?id=<?php echo $service['id'] ?>"> <?php echo $service['title']; ?></a>
-                                                    </li>                                    
+                                                    <li><a class="is-active" href="view-service.php?id=<?php echo $service['id'] ?>">
+                                                            <?php echo $service['title']; ?>
+                                                        </a></li>
+
                                                 </ul>
+
                                                 <?php
                                             }
                                         }
                                         ?>
                                     </div>
                                     <!--// Single Widget -->
+
 
 
 
